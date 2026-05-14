@@ -53,15 +53,37 @@ function setupBookingForm() {
   const form = document.getElementById("bookingForm");
   if (!form) return;
   const message = document.getElementById("bookingMessage");
+  const checkInInput = document.getElementById("checkIn");
+  const checkOutInput = document.getElementById("checkOut");
+  const today = new Date().toISOString().split("T")[0];
+
+  checkInInput.min = today;
+  checkOutInput.min = today;
+
+  checkInInput.addEventListener("change", function () {
+    checkOutInput.min = checkInInput.value || today;
+  });
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     const guestName = document.getElementById("guestName").value.trim();
     const roomType = document.getElementById("roomType").value;
-    const checkIn = document.getElementById("checkIn").value;
-    const checkOut = document.getElementById("checkOut").value;
+    const checkIn = checkInInput.value;
+    const checkOut = checkOutInput.value;
+
+    if (checkIn < today) {
+      message.textContent = "Check-in date cannot be in the past.";
+      return;
+    }
+
+    if (checkOut <= checkIn) {
+      message.textContent = "Check-out date must be after check-in date.";
+      return;
+    }
+
     message.textContent = `Booking confirmed for ${guestName} (${roomType}) from ${checkIn} to ${checkOut}.`;
     form.reset();
+    checkOutInput.min = today;
   });
 }
 
