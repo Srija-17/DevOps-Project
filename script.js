@@ -1,3 +1,5 @@
+const DEMO_AUTH_ENABLED = true;
+
 function ensureAuth() {
   const body = document.body;
   if (body.dataset.authRequired === "true" && sessionStorage.getItem("hmsAuth") !== "true") {
@@ -8,21 +10,21 @@ function ensureAuth() {
 function setupAuthForm() {
   const form = document.getElementById("authForm");
   if (!form) return;
-  const isDemoMode = true;
-
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
     const status = document.getElementById("authStatus");
 
-    if (isDemoMode && username && password) {
+    if (DEMO_AUTH_ENABLED && username && password) {
       sessionStorage.setItem("hmsAuth", "true");
+      status.textContent = "";
       window.location.href = "index.html";
       return;
     }
 
     status.textContent = "Please enter both username and password.";
+    status.style.display = "block";
   });
 }
 
