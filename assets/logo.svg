@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="90" viewBox="0 0 220 90" fill="none">
+  <rect width="220" height="90" rx="12" fill="#1F5FA6"/>
+  <path d="M25 62V28H33L45 47L57 28H65V62H57V42L45 58L33 42V62H25Z" fill="white"/>
+  <text x="78" y="48" fill="white" font-size="24" font-family="Arial" font-weight="700">Blue Haven Hotel</text>
+</svg>

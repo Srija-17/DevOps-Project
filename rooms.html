@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Haven Hotel - Rooms</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-auth-required="true">
+  <nav>
+    <div class="container">
+      <a href="index.html">Landing</a>
+      <a href="rooms.html">Rooms & Pricing</a>
+      <a href="booking.html">Booking</a>
+      <a href="auth.html">Authentication</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h1>Room Types & Prices</h1>
+      <div class="search-wrap">
+        <label>
+          Search rooms (custom search bar)
+          <input id="roomSearch" type="search" placeholder="Search by room type, facilities, or price..." />
+        </label>
+      </div>
+
+      <div class="grid">
+        <article class="room-card card">
+          <img src="assets/room-standard.svg" alt="Standard Room" />
+          <h2>Standard Room</h2>
+          <p>Queen bed, free Wi-Fi, breakfast included.</p>
+          <p><strong>$120 / night</strong></p>
+        </article>
+
+        <article class="room-card card">
+          <img src="assets/room-deluxe.svg" alt="Deluxe Room" />
+          <h2>Deluxe Room</h2>
+          <p>King bed, balcony, city view, free Wi-Fi.</p>
+          <p><strong>$180 / night</strong></p>
+        </article>
+
+        <article class="room-card card">
+          <img src="assets/room-suite.svg" alt="Executive Suite" />
+          <h2>Executive Suite</h2>
+          <p>Living area, premium amenities, complimentary lounge access.</p>
+          <p><strong>$260 / night</strong></p>
+        </article>
+      </div>
+
+      <p id="emptyResults" class="muted" style="display:none; margin-top:14px;">No rooms match your search.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
