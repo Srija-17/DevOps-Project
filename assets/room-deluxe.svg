@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
-  <rect width="640" height="360" fill="#DDEAFE"/>
-  <rect x="80" y="180" width="360" height="90" rx="12" fill="#7C9BD1"/>
-  <rect x="96" y="146" width="96" height="44" rx="8" fill="#AFC5EB"/>
-  <rect x="456" y="120" width="120" height="150" rx="8" fill="#F6D365"/>
-  <text x="80" y="320" fill="#1F2937" font-size="38" font-family="Arial" font-weight="700">Deluxe Room</text>
-</svg>

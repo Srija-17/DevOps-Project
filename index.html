@@ -1,35 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blue Haven Hotel - Landing</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Luxury Hotel & Resort</title>
+    <meta name="description" content="Experience unparalleled luxury at Lumina Hotel.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-<body data-auth-required="true">
-  <nav>
-    <div class="container">
-      <a href="index.html">Landing</a>
-      <a href="rooms.html">Rooms & Pricing</a>
-      <a href="booking.html">Booking</a>
-      <a href="auth.html">Authentication</a>
-      <a href="#" id="logoutBtn">Logout</a>
-    </div>
-  </nav>
+<body>
 
-  <main class="container">
-    <section class="card">
-      <img src="assets/logo.svg" alt="Blue Haven Hotel logo" />
-      <h1>Welcome to Blue Haven Hotel</h1>
-      <p>
-        Blue Haven Hotel offers a relaxing stay with premium comfort, city-view rooms, and modern amenities.
-        Our team focuses on warm hospitality, easy booking, and a memorable guest experience.
-      </p>
-      <p class="muted">
-        Explore room categories, compare prices, and book your next stay in just a few steps.
-      </p>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#landing" class="logo-container">
+                <img src="assets/logo.png" alt="Lumina Logo" class="logo">
+                <span class="brand-name">LUMINA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#landing" class="nav-link active">Home</a></li>
+                <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#booking" class="btn-book">Book Now</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Landing Page -->
+    <section id="landing" class="page-section hero-section">
+        <div class="hero-bg">
+            <img src="assets/hotel_bg.png" alt="Luxury Hotel Exterior at Twilight" class="bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="fade-in-up">Experience Unparalleled Luxury</h1>
+            <p class="fade-in-up delay-1">Your sanctuary of elegance and tranquility awaits.</p>
+            
+            <div class="contact-info fade-in-up delay-2">
+                <div class="contact-item">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <span>+1 (800) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <span>reservations@luminahotel.com</span>
+                </div>
+                <div class="contact-item">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span>123 Ocean Drive, Azure Coast</span>
+                </div>
+            </div>
+            
+            <a href="#rooms" class="btn-primary fade-in-up delay-3">Explore Our Suites</a>
+        </div>
     </section>
-  </main>
-  <script src="script.js"></script>
+
+    <!-- 2. Rooms -->
+    <section id="rooms" class="page-section section-padding dark-bg">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Our Signature Suites</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Designed for absolute comfort and breathtaking views.</p>
+            </div>
+            
+            <div class="rooms-grid">
+                <!-- Room Card 1 -->
+                <div class="room-card">
+                    <div class="room-img-wrapper">
+                        <img src="assets/room.png" alt="Ocean View Suite">
+                        <div class="price-tag">$500 <span>/ night</span></div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Ocean View Suite</h3>
+                        <p>Wake up to the breathtaking panorama of the azure sea from your king-size bed.</p>
+                        <ul class="room-amenities">
+                            <li><ion-icon name="wifi-outline"></ion-icon> Free WiFi</li>
+                            <li><ion-icon name="tv-outline"></ion-icon> 65" OLED TV</li>
+                            <li><ion-icon name="cafe-outline"></ion-icon> Espresso Machine</li>
+                        </ul>
+                        <a href="#booking" class="btn-secondary">Book Room</a>
+                    </div>
+                </div>
+
+                <!-- Room Card 2 (Placeholder using same image for aesthetics) -->
+                <div class="room-card">
+                    <div class="room-img-wrapper">
+                        <img src="assets/room.png" alt="Presidential Suite" style="filter: hue-rotate(15deg);">
+                        <div class="price-tag">$1,200 <span>/ night</span></div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Presidential Suite</h3>
+                        <p>The pinnacle of luxury with panoramic views, private terrace, and personal butler.</p>
+                        <ul class="room-amenities">
+                            <li><ion-icon name="wine-outline"></ion-icon> Mini Bar</li>
+                            <li><ion-icon name="water-outline"></ion-icon> Private Jacuzzi</li>
+                            <li><ion-icon name="key-outline"></ion-icon> Butler Service</li>
+                        </ul>
+                        <a href="#booking" class="btn-secondary">Book Room</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services (Moved up for better flow before booking) -->
+    <section id="services" class="page-section section-padding light-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">World-Class Services</h2>
+                <div class="title-divider left"></div>
+            </div>
+            
+            <div class="services-content">
+                <div class="service-img-container">
+                    <img src="assets/service.png" alt="Fine Dining Restaurant" class="service-img">
+                    <div class="img-badge">Michelin Starred</div>
+                </div>
+                <div class="service-text">
+                    <h3>Gastronomic Excellence</h3>
+                    <p>Indulge in culinary masterpieces crafted by world-renowned chefs in our premium restaurant. Enjoy an exquisite menu paired with a curated selection from our extensive wine cellar.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><ion-icon name="restaurant-outline"></ion-icon></div>
+                            <div>
+                                <h4>Fine Dining</h4>
+                                <p>Exquisite global cuisine.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><ion-icon name="flower-outline"></ion-icon></div>
+                            <div>
+                                <h4>Luxury Spa</h4>
+                                <p>Rejuvenating holistic treatments.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><ion-icon name="car-sport-outline"></ion-icon></div>
+                            <div>
+                                <h4>Chauffeur</h4>
+                                <p>Premium airport transfers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Booking and Payment -->
+    <section id="booking" class="page-section section-padding accent-bg">
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <h2 class="section-title text-white">Reserve Your Stay</h2>
+                    <p class="text-white op-80">Secure your dream vacation today. Best price guaranteed when you book directly with us.</p>
+                </div>
+                <div class="booking-form-container">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="checkin">Check-in</label>
+                                <input type="date" id="checkin" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="checkout">Check-out</label>
+                                <input type="date" id="checkout" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="guests">Guests</label>
+                                <select id="guests">
+                                    <option>1 Adult</option>
+                                    <option selected>2 Adults</option>
+                                    <option>2 Adults, 1 Child</option>
+                                    <option>Family (4+)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="room-type">Room Type</label>
+                                <select id="room-type">
+                                    <option>Ocean View Suite</option>
+                                    <option>Presidential Suite</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="payment-section">
+                            <h4>Payment Details</h4>
+                            <div class="input-group">
+                                <label for="card">Card Number</label>
+                                <input type="text" id="card" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="expiry">Expiry</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="password" id="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Confirm Booking & Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="Lumina Logo" class="footer-logo">
+                    <p>Redefining luxury hospitality on the Azure Coast.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#landing">Home</a>
+                    <a href="#rooms">Rooms</a>
+                    <a href="#services">Services</a>
+                    <a href="#booking">Booking</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lumina Hotel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

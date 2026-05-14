@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
-  <rect width="640" height="360" fill="#FDE7DD"/>
-  <rect x="66" y="170" width="390" height="96" rx="12" fill="#E8AA8C"/>
-  <circle cx="520" cy="124" r="54" fill="#FFC4A8"/>
-  <rect x="88" y="132" width="102" height="40" rx="8" fill="#F4CBB6"/>
-  <text x="70" y="320" fill="#1F2937" font-size="38" font-family="Arial" font-weight="700">Executive Suite</text>
-</svg>
