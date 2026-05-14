@@ -1,6 +1,6 @@
 function ensureAuth() {
   const body = document.body;
-  if (body.dataset.authRequired === "true" && localStorage.getItem("hmsAuth") !== "true") {
+  if (body.dataset.authRequired === "true" && sessionStorage.getItem("hmsAuth") !== "true") {
     window.location.href = "auth.html";
   }
 }
@@ -15,13 +15,13 @@ function setupAuthForm() {
     const password = document.getElementById("password").value.trim();
     const status = document.getElementById("authStatus");
 
-    if (username === "admin" && password === "hotel123") {
-      localStorage.setItem("hmsAuth", "true");
+    if (username && password) {
+      sessionStorage.setItem("hmsAuth", "true");
       window.location.href = "index.html";
       return;
     }
 
-    status.textContent = "Invalid credentials. Use admin / hotel123";
+    status.textContent = "Please enter both username and password.";
   });
 }
 
@@ -71,12 +71,16 @@ function setupBookingForm() {
     const checkIn = checkInInput.value;
     const checkOut = checkOutInput.value;
 
-    if (checkIn < today) {
+    const checkInDate = new Date(`${checkIn}T00:00:00`);
+    const checkOutDate = new Date(`${checkOut}T00:00:00`);
+    const todayDate = new Date(`${today}T00:00:00`);
+
+    if (checkInDate < todayDate) {
       message.textContent = "Check-in date cannot be in the past.";
       return;
     }
 
-    if (checkOut <= checkIn) {
+    if (checkOutDate <= checkInDate) {
       message.textContent = "Check-out date must be after check-in date.";
       return;
     }
@@ -91,7 +95,7 @@ function setupLogout() {
   const logout = document.getElementById("logoutBtn");
   if (!logout) return;
   logout.addEventListener("click", function () {
-    localStorage.removeItem("hmsAuth");
+    sessionStorage.removeItem("hmsAuth");
     window.location.href = "auth.html";
   });
 }
