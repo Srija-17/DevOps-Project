@@ -1,4 +1,7 @@
-const DEMO_AUTH_ENABLED = true;
+function parseLocalDate(value) {
+  const [year, month, day] = value.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
 
 function ensureAuth() {
   const body = document.body;
@@ -10,13 +13,14 @@ function ensureAuth() {
 function setupAuthForm() {
   const form = document.getElementById("authForm");
   if (!form) return;
+  const demoAuthEnabled = document.body.dataset.demoAuth === "true";
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
     const status = document.getElementById("authStatus");
 
-    if (DEMO_AUTH_ENABLED && username && password) {
+    if (demoAuthEnabled && username && password) {
       sessionStorage.setItem("hmsAuth", "true");
       status.textContent = "";
       window.location.href = "index.html";
@@ -73,11 +77,6 @@ function setupBookingForm() {
     const roomType = document.getElementById("roomType").value;
     const checkIn = checkInInput.value;
     const checkOut = checkOutInput.value;
-
-    const parseLocalDate = (value) => {
-      const [year, month, day] = value.split("-").map(Number);
-      return new Date(year, month - 1, day);
-    };
 
     const checkInDate = parseLocalDate(checkIn);
     const checkOutDate = parseLocalDate(checkOut);
