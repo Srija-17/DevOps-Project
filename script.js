@@ -8,6 +8,7 @@ function ensureAuth() {
 function setupAuthForm() {
   const form = document.getElementById("authForm");
   if (!form) return;
+  const isDemoMode = true;
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -15,7 +16,7 @@ function setupAuthForm() {
     const password = document.getElementById("password").value.trim();
     const status = document.getElementById("authStatus");
 
-    if (username && password) {
+    if (isDemoMode && username && password) {
       sessionStorage.setItem("hmsAuth", "true");
       window.location.href = "index.html";
       return;
@@ -71,9 +72,14 @@ function setupBookingForm() {
     const checkIn = checkInInput.value;
     const checkOut = checkOutInput.value;
 
-    const checkInDate = new Date(`${checkIn}T00:00:00`);
-    const checkOutDate = new Date(`${checkOut}T00:00:00`);
-    const todayDate = new Date(`${today}T00:00:00`);
+    const parseLocalDate = (value) => {
+      const [year, month, day] = value.split("-").map(Number);
+      return new Date(year, month - 1, day);
+    };
+
+    const checkInDate = parseLocalDate(checkIn);
+    const checkOutDate = parseLocalDate(checkOut);
+    const todayDate = parseLocalDate(today);
 
     if (checkInDate < todayDate) {
       message.textContent = "Check-in date cannot be in the past.";
