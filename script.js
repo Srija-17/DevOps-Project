@@ -87,3 +87,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+function checkRoomAvailability(roomType) {
+    const availableRooms = {
+        standard: 5,
+        deluxe: 3,
+        suite: 2
+    };
+
+    if (availableRooms[roomType] > 0) {
+        alert(`${roomType} rooms are available.`);
+    } else {
+        alert(`${roomType} rooms are not available.`);
+    }
+}
+
+function calculateBill(days, roomPrice) {
+    const total = days * roomPrice;
+    return total;
+}
+
+function customerCheckIn(customerName) {
+    console.log(`${customerName} checked in successfully.`);
+}
+
+function customerCheckOut(customerName) {
+    console.log(`${customerName} checked out successfully.`);
+}
+
+function cancelReservation(bookingId) {
+    console.log(`Reservation with Booking ID ${bookingId} cancelled.`);
+}
